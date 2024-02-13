@@ -1,7 +1,19 @@
-# Online-Calendar
+# Online Calendar
+
+## Introduction
+Online Calendar is a web application where users can register, login, and manage their own personal calendars. Users can add events and meetings to their calendars and receive email notifications for upcoming events.
+
+## Features
+- User authentication: Users can register for an account and login securely, with encrypted password.
+- Personalized calendars: Each user has their own calendar with the ability to add, view, edit, and delete events.
+- Event scheduling: Users can schedule events and meetings with specific date, time, and description.
+- Email notifications: Users receive email reminders for upcoming events.
+
+## Technologies Used
+- HTML/CSS/JavaScript for frontend development.
+- PHP for server-side scripting.
+- MySQL for database management.
+- XAMPP for running a localhost server.
 
 
-This is a Online Calendar Website, where people can register and login. 
-When i will login to my account I will se my own calendar.
-I will add events/meeting in my database , for example I can add a metting 8am-10am and I will recive an email to enter in the meeting.
-To run the program, it is necessary to open a localhost server with XAMPP !
+
