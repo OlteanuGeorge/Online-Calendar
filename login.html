@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #8594e4, #e4c585);
+            
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 17px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding-right: 0px;
+            padding-left:5px;
+            
+            
+        }
+
+        button {
+            width: 101.3%;
+            background-color: #6643b5; 
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin:auto;
+            
+        }
+
+        button:hover {
+            background-color: #430f58;
+        }
+
+        h2{
+            font-family: Montserrat;
+            font-size: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="login_process.php" method="POST">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+
+    <script>
+        // Adaugăm animații pentru buton și câmpurile de intrare
+        const button = document.querySelector("button");
+        const firstNameInput = document.getElementById("first-name");
+        const lastNameInput = document.getElementById("last-name");
+        const passwordInput = document.getElementById("password");
+
+        // Animatie de hover pe buton
+        button.addEventListener("mouseover", function () {
+            button.style.backgroundColor = "#430f58";
+        });
+
+        button.addEventListener("mouseout", function () {
+            button.style.backgroundColor = "#6643b5";
+        });
+
+        // Animatie pentru câmpurile de intrare la focus
+        usernameInput.addEventListener("focus", function () {
+            usernameInput.style.transform = "scale(1.02)";
+        });
+
+        usernameInput.addEventListener("blur", function () {
+            usernameInput.style.transform = "scale(1)";
+        });
+
+        passwordInput.addEventListener("focus", function () {
+            passwordInput.style.transform = "scale(1.02)";
+        });
+
+        passwordInput.addEventListener("blur", function () {
+            passwordInput.style.transform = "scale(1)";
+        });
+
+        // Animatie după trimiterea formularului
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            if (username === "user" && password === "password") {
+                // Adaugăm o animație de redirecționare
+                document.querySelector(".container").style.transform = "scale(0.9)";
+                setTimeout(function () {
+                    window.location.href = "file:///D:/OneDrive/Desktop/calendar.html";
+                }, 500);
+            } else {
+                alert("Login failed. Please check your credentials.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #8594e4, #e4c585);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 17px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding-right: 0;
+            padding-left: 5px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #6643b5;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: auto;
+        }
+
+        button:hover {
+            background-color: #430f58;
+        }
+
+        h2 {
+            font-family: Montserrat;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="authForm" action="register_process.php" method="POST">
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+            
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+            
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+           
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+ <script>
+        const button = document.querySelector("button");
+        const firstNameInput = document.getElementById("first-name");
+        const lastNameInput = document.getElementById("last-name");
+
+        button.addEventListener("mouseover", function () {
+            button.style.backgroundColor = "#430f58";
+        });
+
+        button.addEventListener("mouseout", function () {
+            button.style.backgroundColor = "#6643b5";
+        });
+
+        firstNameInput.addEventListener("focus", function () {
+            firstNameInput.style.transform = "scale(1.02)";
+        });
+
+        firstNameInput.addEventListener("blur", function () {
+            firstNameInput.style.transform = "scale(1)";
+        });
+
+        lastNameInput.addEventListener("focus", function () {
+            lastNameInput.style.transform = "scale(1.02)";
+        });
+
+        lastNameInput.addEventListener("blur", function () {
+            lastNameInput.style.transform = "scale(1)";
+        });
+
+        // document.getElementById("authForm").addEventListener("submit", function (event) {
+        //     event.preventDefault();
+        //     const firstName = firstNameInput.value;
+        //     const lastName = lastNameInput.value;
+        //     const password = document.getElementById("password").value;
+
+        //     if (firstName && lastName && password) {
+        //         // Adaugăm o animație de redirecționare (recomand să folosiți o autentificare adecvată aici)
+        //         document.querySelector(".container").style.transform = "scale(0.9)";
+        //         setTimeout(function () {
+        //             alert("Authentication successful. Redirect to your calendar or dashboard.");
+        //         }, 500);
+        //     } else {
+        //         alert("Authentication failed. Please fill in all the required fields.");
+        //     }
+        // });
+    </script>
+
+    <!-- <script>
+        document.getElementById("authForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('register_process.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Registration successful
+                    document.querySelector(".container").style.transform = "scale(0.9)";
+                    setTimeout(function () {
+                        alert("Registration successful. Redirect to your calendar or dashboard.");
+                    }, 500);
+                } else {
+                    // Registration failed
+                    alert("Registration failed. Please fill in all the required fields.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script> -->
+</body>
+</html>
